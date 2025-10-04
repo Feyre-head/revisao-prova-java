@@ -1,49 +1,94 @@
 import java.util.Scanner;
 
 public class Atv1 {
-    public int menor = 0;
+    //Armazenar valores de Pares
+    static int[] impar = new int[10];
+    //Armazenar Valores de ímpares
+    static int[] par = new int[10];
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         int tamanho = 10;
-        int[] vetorNum = new int[10];
+        int[] vetorNum = new int[tamanho];
 
+        Scanner sc = new Scanner(System.in);
+
+        //Ler 10 números
         for (int v = 0; v < tamanho; v++) {
-            System.out.println("Informe o " + (1 + v) + " número");
+            System.out.println("Informe o " + (1 + v) + "° número:");
             vetorNum[v] = sc.nextInt();
         }
-        //todo maiorNum()
-        //todo menorNum()
+
+        //Números na Lista
+        mostrarLista(vetorNum);
+
+        //Maior número da lista
+        maiorNum(vetorNum);
+
+        //Menor número
+        menorNum(vetorNum);
+
+        //Pares
+        pares(vetorNum);
+
+
         //todo paresImpares
-
-       /* Escreva um programa em Java que:
-
-        1. Leia **10 números inteiros** e armazene em um **vetor**.
-        2. Mostre:
-
-        - O **maior número** digitado.
-                - O **menor número** digitado.
-                - Quantos números são **pares** e quantos são **ímpares**.
-
-👉 **Requisitos:**
-
-        - Usar `Scanner` para entrada de dados.
-        - Utilizar **laço de repetição** (`for` ou `while`).
-        - Utilizar pelo menos **uma função** que receba o vetor como parâmetro e retorne o maior valor.*/
 
 
     }
 
-    public class
-
-    int maiorNum(int numVetor) {
-        menor = 0;
-        for (int l = 0; l < 10; l++) {
-
-            if (numVetor > menor) {
-                menor++;
+    //Retornar números Pares e Impares
+    public static void pares(int[] vetor) {
+        int cont = 0;
+        System.out.println("Números Pares: ");
+        for (int c = 0; c < 10; c++) {
+            if (vetor[c] % 2 == 0) {
+                par[cont] = vetor[c];
+                cont++;
             }
         }
+
+        for (int c = 0; c < cont; c++) {
+            System.out.print(par[c] + " ");
+        }
+        System.out.println();
+    }
+
+
+    //Retornar Maior número
+    public static void maiorNum(int[] vetor) {
+        int maior = 0;
+        for (int i : vetor) { //Lê todos os números dentro do vetor
+            if (maior < i) {
+                maior = i;
+            }
+        }
+        System.out.print(maior + " é o maior número!");
+        System.out.println();
+
+    }
+
+
+    //Retornar Menor número
+    public static void menorNum(int[] vetor) {
+        int menor = vetor[0];
+        for (int c : vetor) { //Lê todos os números dentro do vetor
+            if (c < menor) {
+                menor = c;
+            }
+        }
+        System.out.print(menor + " é o menor número");
+        System.out.println();
+    }
+
+    //Mostrar números na Lista
+    public static void mostrarLista(int[] vetor) {
+        System.out.println("Números Adicionados:");
+        for (int lista : vetor) {
+
+            System.out.print(lista + " ");
+        }
+        System.out.println();
+
     }
 }
