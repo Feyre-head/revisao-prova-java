@@ -32,12 +32,10 @@ public class Atv1 {
         pares(vetorNum);
 
 
-        //todo paresImpares
-
-
     }
 
-    //Retornar números Pares e Impares
+
+    //Retornar números Pares e ímpares
     public static void pares(int[] vetor) {
         int cont = 0;
         System.out.println("Números Pares: ");
@@ -45,6 +43,8 @@ public class Atv1 {
             if (vetor[c] % 2 == 0) {
                 par[cont] = vetor[c];
                 cont++;
+            } else {
+
             }
         }
 
